@@ -10,14 +10,14 @@ import { TrashIcon } from "@heroicons/react/24/solid";
 function Nav({ userName }) {
   return (
     <nav>
-      <NavLink to="/" aria-label="Go to home">
+      <NavLink to="/budget-application/" aria-label="Go to home">
         <img src={logomark} alt="" height={30} />
         <span>HomeBudget</span>
       </NavLink>
       {userName && (
         <Form
           method="post"
-          action="/budget-application/logout"
+          action="/logout"
           onSubmit={(e) => {
             if (!confirm("Delete user and all data?")) {
               e.preventDefault();
