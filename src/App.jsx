@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       {
-        index: true,
+        path: "/budget-application",
         element: <Dashboard />,
         loader: dashboardLoader,
         action: dashboardAction,
