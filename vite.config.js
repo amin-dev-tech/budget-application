@@ -3,6 +3,6 @@ import react from "@vitejs/plugin-react-swc";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // base: "/budget-application/",
+  base: "/budget-application/",
   plugins: [react()],
 });

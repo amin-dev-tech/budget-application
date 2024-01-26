@@ -15,20 +15,20 @@ import { logoutAction } from "./actions/logout";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/budget-application/",
     element: <Main />,
     loader: mainLoader,
     errorElement: <Error />,
     children: [
       {
-        path: "/",
+        path: "/budget-application/",
         element: <Dashboard />,
         loader: dashboardLoader,
         action: dashboardAction,
         errorElement: <Error />,
       },
       {
-        path: "/logout",
+        path: "/budget-application/logout",
         action: logoutAction,
       },
     ],
