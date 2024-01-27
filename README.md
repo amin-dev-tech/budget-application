@@ -29,12 +29,12 @@ This React Budget Application provides users with a seamless experience for mana
 
 To run the React Budget Application locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/react-budget-app.git`
-2. Navigate to the project directory: `cd react-budget-app`
+1. Clone the repository: `git clone https://github.com/amin-dev-tech/budget-application.git`
+2. Navigate to the project directory: `cd budget-application`
 3. Install dependencies: `npm install`
-4. Start the application: `npm start`
+4. Start the application: `npm run dev`
 
-The application will be accessible at `http://localhost:3000/` in your browser.
+The application will be accessible at `http://localhost:5173/budget-application/` in your browser.
 
 ## Usage
 
