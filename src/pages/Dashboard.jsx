@@ -1,6 +1,12 @@
 // helper functions
-import { useLoaderData } from "react-router-dom";
-import { createBudget, createExpense, fetchData, waait } from "../helper";
+import { Link, useLoaderData } from "react-router-dom";
+import {
+  createBudget,
+  createExpense,
+  deleteItem,
+  fetchData,
+  waait,
+} from "../helper";
 
 // components
 import Intro from "../components/Intro";
@@ -60,6 +66,18 @@ export async function dashboardAction({ request }) {
         throw new Error("There was a problem creating your expense!", err);
       }
     }
+    case "deleteExpense": {
+      try {
+        // create an expense
+        deleteItem({
+          key: "expenses",
+          id: values.expenseId,
+        });
+        return toast.success("Expense deleted!");
+      } catch (err) {
+        throw new Error("There was a problem deleting your expense!", err);
+      }
+    }
   }
 }
 
@@ -91,10 +109,18 @@ function Dashboard() {
                   <div className="grid-md">
                     <h2>Recent Expenses</h2>
                     <Table
-                      expenses={expenses.sort(
-                        (a, b) => b.createdAt - a.createdAt
-                      )}
+                      expenses={expenses
+                        .sort((a, b) => b.createdAt - a.createdAt)
+                        .slice(0, 8)}
                     />
+                    {expenses.length > 8 && (
+                      <Link
+                        to="/budget-application/expenses"
+                        className="btn btn--dark"
+                      >
+                        View all expenses
+                      </Link>
+                    )}
                   </div>
                 )}
               </div>
