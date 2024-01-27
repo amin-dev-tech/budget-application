@@ -17,7 +17,7 @@ function Nav({ userName }) {
       {userName && (
         <Form
           method="post"
-          action="/logout"
+          action="/budget-application/logout"
           onSubmit={(e) => {
             if (!confirm("Delete user and all data?")) {
               e.preventDefault();
