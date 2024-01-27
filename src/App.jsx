@@ -43,7 +43,7 @@ const router = createBrowserRouter([
         errorElement: <Error />,
         children: [
           {
-            path: "delete",
+            path: "/budget-application/budget/:id/delete",
             action: deleteBudget,
           },
         ],

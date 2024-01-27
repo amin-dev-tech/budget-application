@@ -1,16 +1,16 @@
+// rrd import
+import { redirect } from "react-router-dom";
+
 // library
 import { toast } from "react-toastify";
 
 // helpers
 import { deleteItem, getAllMatchingItems } from "../helper";
 
-// rrd imports
-import { redirect } from "react-router-dom";
-
 export function deleteBudget({ params }) {
   try {
     deleteItem({
-      key: "budget",
+      key: "budgets",
       id: params.id,
     });
 
@@ -20,16 +20,16 @@ export function deleteBudget({ params }) {
       value: params.id,
     });
 
-    associatedExpenses.forEach((exp) => {
+    associatedExpenses.forEach((expense) => {
       deleteItem({
         key: "expenses",
-        id: exp.id,
+        id: expense.id,
       });
     });
-    toast.success("Budget deleted successfully!");
-  } catch (err) {
-    throw new Error("There was a problem deleting your budget!", err);
-  }
 
+    toast.success("Budget deleted successfully!");
+  } catch (e) {
+    throw new Error("There was a problem deleting your budget.");
+  }
   return redirect("/budget-application/");
 }
