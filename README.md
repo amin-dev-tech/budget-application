@@ -12,6 +12,7 @@ Welcome to the React Budget Application project! This application is a responsiv
   - [Usage](#usage)
   - [Folder Structure](#folder-structure)
   - [Dependencies](#dependencies)
+  - [Note](#note)
   - [Contributing](#contributing)
 
 ## Overview
@@ -60,6 +61,10 @@ The project follows a modular folder structure for better organization:
 - React Toastify
 
 For a complete list of dependencies, refer to the `package.json` file.
+
+## Note
+
+This applciation is for portfolio showcase and uses local storage to store your data. Please do not use this application for production purposes or important use cases.
 
 ## Contributing
 
